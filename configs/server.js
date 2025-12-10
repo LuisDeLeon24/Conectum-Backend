@@ -6,6 +6,7 @@ import morgan from "morgan";
 import limiter from "../src/middlewares/request-Limit.js";
 import dbConnection from "./postgres.js";
 import testRoutes from "../src/test/test.routes.js";
+import sectorsRoutes from "../src/sector/sector.routes.js";
 
 import swaggerDocs from "./swagger.js"; // <-- IMPORTANTE
 
@@ -20,6 +21,7 @@ const middlewares = (app) => {
 
 const routes = (app) => {
     app.use('/Conectum/test', testRoutes);
+    app.use('/Conectum/sectors', sectorsRoutes);
 }
 
 export const initServer = async () => {
