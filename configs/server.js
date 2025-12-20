@@ -8,6 +8,7 @@ import dbConnection from "./postgres.js";
 import testRoutes from "../src/test/test.routes.js";
 import sectorsRoutes from "../src/sector/sector.routes.js";
 import citiesRoutes from "../src/cities/cities.routes.js";
+import authRoutes from "../src/auth/auth.routes.js";
 
 import swaggerDocs from "./swagger.js"; // <-- IMPORTANTE
 
@@ -24,6 +25,7 @@ const routes = (app) => {
     app.use('/Conectum/test', testRoutes);
     app.use('/Conectum/sectors', sectorsRoutes);
     app.use('/Conectum/cities', citiesRoutes);
+    app.use('/Conectum/auth', authRoutes);
 }
 
 export const initServer = async () => {
